@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spotify Callback</title>
+</head>
+<body>
+  <h2>Autenticado com sucesso! ✅</h2>
+  <p id="info"></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const error = params.get("error");
+
+    if (code) {
+      document.getElementById("info").innerText = "Code: " + code;
+    } else if (error) {
+      document.getElementById("info").innerText = "Erro: " + error;
+    }
+  </script>
+</body>
+</html>
